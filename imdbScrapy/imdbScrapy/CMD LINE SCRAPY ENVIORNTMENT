@@ -1,0 +1,13 @@
+activate ScrapyEnviornment
+
+//puts us in an enviornment where we can test our css and xpaths
+scrapy shell "https://www.imdb.com/chart/tvmeter?ref_=nv_tvv_mptv"
+
+
+In [5]: response.css('.titleColumn a::text').getall()
+
+In [9]: imdbLister = response.css('.lister-list tr ::text').getall()
+
+response.css("title::text").extract()         #returns a list 
+response.css("title::text")[0].extract()      #returns an element 
+response.css("title::text").extract_first()   #returns an element 
